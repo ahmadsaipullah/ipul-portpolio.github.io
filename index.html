@@ -1,238 +1,302 @@
 <!doctype html>
-<html lang="en" id="home">
-
+<html lang="id">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ahmad Saifullah | Web Developer & IT Support</title>
+    
+    <link rel="icon" type="image/png" href="https://placehold.co/32x32/0d6efd/FFFFFF/png?text=AS">
 
-    <title>My Portpolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bs-primary-rgb: 13, 110, 253;
+            --bs-dark-rgb: 33, 37, 41;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: rgba(var(--bs-dark-rgb), 0.95);
+            backdrop-filter: blur(5px);
+        }
+        .hero {
+            padding: 10rem 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/2c3e50/ecf0f1/png?text=Code+Abstract') no-repeat center center;
+            background-size: cover;
+            color: white;
+        }
+        .hero img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .hero h1 { font-weight: 700; font-size: 3.2rem; }
+        .typed-cursor { font-size: 2rem; color: #0d6efd; }
+        section { padding: 6rem 0; }
+        .section-title { font-weight: 800; margin-bottom: 3.5rem; text-transform: uppercase; letter-spacing: 1.5px; }
+        .skill-card { background: #fff; border: 0; border-radius: 10px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .skill-icon { font-size: 3rem; color: #0d6efd; }
+        .project-card { transition: transform 0.3s, box-shadow 0.3s; border: none; }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .tech-badge { background-color: #e9ecef; color: #212529; font-weight: 500; }
+        .timeline { list-style: none; padding: 0; position: relative; }
+        .timeline:before { content: ''; position: absolute; top: 0; bottom: 0; width: 3px; background: #e9ecef; left: 1.25rem; }
+        .timeline-item { margin-bottom: 2rem; position: relative; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .timeline-icon { position: absolute; left: 0; top: 0; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #0d6efd; color: white; display: flex; align-items: center; justify-content: center; z-index: 1; border: 3px solid #f8f9fa; }
+        .timeline-content { margin-left: 4rem; background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .timeline-content h5 { font-weight: 700; }
+        .timeline-content .date { font-weight: 500; color: #6c757d; font-size: 0.9rem; }
+        footer { background-color: #212529; color: white; padding: 3rem 0; }
+        .social-icons a { color: white; font-size: 1.5rem; margin: 0 0.75rem; transition: color 0.3s; }
+        .social-icons a:hover { color: #0d6efd; }
+    </style>
 </head>
 
-<body>
-    <!-- awal navbar -->
-    <nav class="navbar navbar-expand-sm navbar-light bg-dark fixed-top">
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
         <div class="container">
-            <a class="navbar-brand text-white" href="#home" class="page-scroll">AHMAD SAIFULLAH</a>
-            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand fw-bold" href="#home">AHMAD SAIFULLAH</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link active text-white" aria-current="page" href="#home"
-                            class="page-scroll">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#about" class="page-scroll">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-white" href="#portpolio" class="page-scroll">Skill</a>
-                    </li>
-                        <li class="nav-item">
-                        <a class="nav-link  text-white" href="#project" class="page-scroll">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-white" href="#contact" class="page-scroll">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- akhir navbar -->
-    <!-- awal jumbotron -->
-    <div class="jumbotron text-center pt-4 pb-2">
-        <img src="img/ipul.png" class="" alt="gambar">
-        <h1>AHMAD SAIFULLAH</h1>
-        <p>Web Development</p>
 
-    </div>
-    <!-- akhir jumbotron -->
-
-    <!-- awal about -->
-    <section class="about pt-5" id="about">
+    <header class="hero text-center" id="home">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center pb-4">About</h2>
-                </div>
-            </div>
-            <div class="row justify-content-sm-center">
-                <div class="col-sm-6">
-                    <p class="paragrafKiri">Perkenalkan Nama Saya, Ahmad Saifullah Saya Adalah Seorang Junior Web
-                        Development Terbiasa Membangun Sebuah Website Menggunakan Framework Laravel</p>
-                </div>
-                <!-- <div class="col-sm-5">
-                    <p class="paragrafKanan">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque ut ratione quos vitae blanditiis, eveniet saepe sapiente, laborum beatae unde commodi voluptates corporis incidunt! Laborum obcaecati autem dignissimos repudiandae unde! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem esse dolorum reprehenderit explicabo et? Accusantium tempora eius corrupti! Veritatis nisi distinctio vel necessitatibus suscipit, commodi voluptas nemo recusandae sit molestiae!</p>
-                </div> -->
+            <img src="https://placehold.co/150x150/ffffff/0d6efd/png?text=AS" alt="Ahmad Saifullah Profile Picture" data-aos="zoom-in">
+            <h1 class="display-4 mt-4" data-aos="fade-up" data-aos-delay="100">Ahmad Saifullah</h1>
+            <p class="lead fs-3" data-aos="fade-up" data-aos-delay="200">I am a <span id="typed-text"></span></p>
+            <div class="social-icons mt-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://linkedin.com/in/ahmad-saifullah-7b1b61227/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ahmadsaipullah" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://youtube.com/saipulahm4d" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
-    </section>
-    <!-- akhir about -->
+    </header>
 
-    <!-- awal portpolio -->
-    <section class="portpolio pt-5" id="portpolio">
+    <section id="about">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center pb-4">Skill</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/1.png" class="img-thumbnail" alt="gambar">
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/2.png" class="img-thumbnail" alt="gambar">
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/3.png" class="img-thumbnail" alt="gambar">
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/4.png" class="img-thumbnail" alt="gambar">
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/5.jpg" class="img-thumbnail" alt="gambar">
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/6.png" class="img-thumbnail" alt="gambar">
-                    </a>
+            <h2 class="text-center section-title" data-aos="fade-up">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <p class="lead">
+                        Lulusan S1 Teknik Informatika dari Universitas Muhammadiyah Tangerang dengan pengalaman di bidang **IT Support** termasuk *troubleshooting*, *networking*, serta manajemen perangkat keras dan lunak[cite: 6]. Saya memiliki rekam jejak yang kuat dalam beberapa proyek pengembangan web, membangun website fungsional menggunakan **Framework Laravel**[cite: 7]. Dikenal sebagai individu yang analitis, mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik untuk mencapai tujuan bersama[cite: 8].
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- akhir portpolio -->
 
-     <!-- awal project -->
-     <section class="portpolio pt-5 mb-5 mt-5" id="project">
+    <section id="skills" class="bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center pb-4">Project</h2>
-                </div>
+            <h2 class="text-center section-title" data-aos="fade-up">Skills & Abilities</h2>
+            <div class="row text-center gy-4">
+                <h4 class="mb-3" data-aos="fade-up">Technical Skills</h4>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100"><div class="skill-card h-100"><i class="fab fa-laravel skill-icon mb-2"></i><h6>Laravel</h6></div></div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150"><div class="skill-card h-100"><i class="fab fa-php skill-icon mb-2"></i><h6>PHP</h6></div></div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200"><div class="skill-card h-100"><i class="fab fa-js-square skill-icon mb-2"></i><h6>JavaScript</h6></div></div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="250"><div class="skill-card h-100"><i class="fab fa-html5 skill-icon mb-2"></i><h6>HTML & CSS</h6></div></div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300"><div class="skill-card h-100"><i class="fas fa-network-wired skill-icon mb-2"></i><h6>Networking</h6></div></div>
+                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="350"><div class="skill-card h-100"><i class="fas fa-tools skill-icon mb-2"></i><h6>Troubleshooting</h6></div></div>
             </div>
-            <div class="row">
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="https://himtiumt.org/">
-                        <img src="img/himti.PNG" class="img-thumbnail" alt="gambar">
-                    </a>
-                    <h3 class="text-center my-4">Website HIMTI UMT</h>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="https://dpp-pmpi.org/">
-                        <img src="img/pmpi.png" class="img-thumbnail" alt="gambar">
-                    </a>
-                    <h3 class="text-center my-4">Website PMPI</h>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="http://www.gmn-511.com/">
-                        <img src="img/gmn.png" class="img-thumbnail" alt="gambar">
-                    </a>
-                    <h3 class="text-center my-4">Maintenance Website GMN</h>
-                </div>
-                <!-- <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/4.png" class="img-thumbnail" alt="gambar">
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/5.jpg" class="img-thumbnail" alt="gambar">
-                    </a>
-                </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 pb-4">
-                    <a href="#">
-                        <img src="img/6.png" class="img-thumbnail" alt="gambar">
-                    </a>
-                </div> -->
+             <div class="row text-center mt-5 gy-4">
+                <h4 class="mb-3" data-aos="fade-up">Soft Skills</h4>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="skill-card h-100"><i class="fas fa-users skill-icon mb-2"></i><h6>Kerjasama Tim</h6></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150"><div class="skill-card h-100"><i class="fas fa-lightbulb skill-icon mb-2"></i><h6>Pemecahan Masalah</h6></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="skill-card h-100"><i class="fas fa-comments skill-icon mb-2"></i><h6>Komunikasi</h6></div></div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250"><div class="skill-card h-100"><i class="fas fa-microphone-alt skill-icon mb-2"></i><h6>Public Speaking</h6></div></div>
             </div>
         </div>
     </section>
-    <!-- akhir project -->
-
-    <!-- awal contact -->
-    <section class="contact pt-5" id="contact">
+    
+    <section id="experience">
         <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Work Experience</h2>
             <div class="row">
-                <div class="col-sm-12">
-                    <h2 class="text-center pb-4">Contact</h2>
+                <div class="col-lg-10 mx-auto">
+                    <ul class="timeline">
+                        <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="timeline-content">
+                                <h5>IT Support</h5>
+                                <p class="mb-1"><strong>PT Tritunggal Maju Sejahtera</strong></p>
+                                <div class="date">Februari 2024 - Sekarang</div>
+                                <ul class="mt-2">
+                                    <li>Melakukan perawatan perangkat keras PC dan sistem CCTV[cite: 11].</li>
+                                    <li>Menganalisis dan memperbaiki masalah sistem/jaringan[cite: 13].</li>
+                                    <li>Mengelola sistem seperti SQL Server 2008, Accurate, POS[cite: 15].</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                             <div class="timeline-content">
+                                <h5>Asisten Lab Komputer (Magang)</h5>
+                                <p class="mb-1"><strong>Universitas Muhammadiyah Tangerang</strong></p>
+                                <div class="date">September 2023 - Februari 2024</div>
+                                <p class="mt-2 mb-0">Mempersiapkan praktikum dan melakukan maintenance pada server dan komputer lab[cite: 96, 97].</p>
+                            </div>
+                        </li>
+                         <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                             <div class="timeline-content">
+                                <h5>Web Apps System Developer (Magang)</h5>
+                                <p class="mb-1"><strong>GMF Aero Asia</strong></p>
+                                <div class="date">Juli 2023 - September 2023</div>
+                                <p class="mt-2 mb-0">Melakukan monitor dan update job card maintenance pesawat pada website internal[cite: 102, 103].</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-people-group"></i></div>
+                             <div class="timeline-content">
+                                <h5>Kepala Divisi Litbang</h5>
+                                <p class="mb-1"><strong>HIMTI UMT</strong></p>
+                                <div class="date">2022 - 2023</div>
+                                <p class="mt-2 mb-0">Memimpin divisi Penelitian dan Pengembangan di Himpunan Mahasiswa Teknik Informatika[cite: 105].</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col-sm-8">
-                        <form action="#" method="#" name="#">
-                            <div class="form-group">
-                                <label for="nama">Nama</label>
-                                <input type="text" id="nama" class="form-control" 
-                                placeholder="Masukan Nama">
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Freelance Projects</h2>
+            <div class="row gy-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 project-card">
+                        <img src="https://placehold.co/600x400/2ecc71/ffffff/png?text=Sistem+Info+Kesehatan" class="card-img-top" alt="Proyek Sistem Informasi Pelayanan Kesehatan">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Sistem Informasi Pelayanan Kesehatan</h5>
+                            <p class="card-text">Membangun sistem untuk Taqi Medika dengan fitur pengelolaan pendaftaran, data pasien, stok obat, dan tindakan medis[cite: 15].</p>
+                            <div class="mt-auto pt-3">
+                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">MySQL</span>
                             </div>
-                            <div class="form-group my-3">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" 
-                                placeholder="Masukan Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 project-card">
+                        <img src="https://placehold.co/600x400/3498db/ffffff/png?text=Sistem+Bimbingan+Skripsi" class="card-img-top" alt="Proyek Sistem Bimbingan Skripsi">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Sistem Bimbingan Kerja Praktik & Skripsi</h5>
+                            <p class="card-text">Sistem untuk UMT yang mengelola data mahasiswa, dosen, kuota bimbingan, serta fitur approval pengajuan[cite: 15].</p>
+                            <div class="mt-auto pt-3">
+                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">Bootstrap</span>
                             </div>
-                            <div class="form-group my-3">
-                                <label for="telp">No. Telpon</label>
-                                <input type="tel" id="telp" class="form-control" 
-                                placeholder="Masukan Nomor Telpon">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 project-card">
+                        <img src="https://placehold.co/600x400/e74c3c/ffffff/png?text=Website+Company+Profile" class="card-img-top" alt="Proyek Company Profile">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Web Company Profile & Lowongan Kerja</h5>
+                            <p class="card-text">Membuat website untuk LPK Yadeffa, mengelola pendaftaran pelatihan, lowongan, berita, dan fitur unduh data pelamar[cite: 15].</p>
+                            <div class="mt-auto pt-3">
+                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">JavaScript</span>
                             </div>
-                            <select name="#" id="#" class="form-control form-select">
-                                <option value="#">-- Pilih Kategori --</option>
-                                <option value="#">Web Desain</option>
-                                <option value="#">Web Development</option>
-                            </select>
-                            <div class="form-group">
-                                <label for="pesan">Pesan</label>
-                                <textarea class="form-control" id="pesan" cols="30" rows="10"
-                                    placeholder="masukan pesan"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary mt-4 form-control">
-                                Kirim Pesan</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- akhir contact -->
-
-    <!-- awal footer -->
-    <footer>
+    
+    <section id="education">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>&copy Copyright 2022 
-                        <a href="https://instagram.com/saipulahm4d?utm_medium=copy_link">
-                            <i class="fa-brands fa-instagram"></i> Saipulahm4d</a></p>
+            <h2 class="text-center section-title" data-aos="fade-up">Education</h2>
+            <div class="row justify-content-center gy-4">
+                <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+                    <div class="skill-card text-center h-100">
+                        <i class="fas fa-university skill-icon mb-3"></i>
+                        <h4>Universitas Muhammadiyah Tangerang</h4>
+                        <p class="text-muted mb-1">S1 Teknik Informatika | 2020 - 2024</p>
+                        <p><strong>IPK: 3.72</strong></p>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
+                    <div class="skill-card text-center h-100">
+                         <i class="fas fa-school skill-icon mb-3"></i>
+                        <h4>SMK Bangun Nusantara</h4>
+                        <p class="text-muted mb-1">Teknik Komputer dan Jaringan | 2014 - 2017</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <h2 class="text-center section-title" data-aos="fade-up">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <p class="lead mb-4">Saya terbuka untuk diskusi, kolaborasi, atau peluang kerja. Silakan hubungi saya melalui detail di bawah ini atau kirim pesan melalui form.</p>
+                    <div class="d-flex justify-content-center flex-wrap">
+                        <a href="mailto:ahmadsaipullah140@gmail.com" class="btn btn-outline-dark m-2"><i class="fas fa-envelope me-2"></i>ahmadsaipullah140@gmail.com</a>
+                        <a href="https://wa.me/6287880182823" class="btn btn-outline-dark m-2"><i class="fab fa-whatsapp me-2"></i>0878-8018-2823</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center">
+            <div class="social-icons mb-3">
+                <a href="https://linkedin.com/in/ahmad-saifullah-7b1b61227/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ahmadsaipullah" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://youtube.com/saipulahm4d" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="mb-0">&copy; Copyright 2025 | Dibuat oleh Ahmad Saifullah</p>
+        </div>
     </footer>
-    <!-- akhir footer -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+        });
+
+        // Initialize Typed.js
+        var typed = new Typed('#typed-text', {
+            strings: ['Web Developer', 'IT Support Specialist', 'Laravel Enthusiast'],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true
+        });
     </script>
-    <script src="scripct.js"></script>
 </body>
-
 </html>
