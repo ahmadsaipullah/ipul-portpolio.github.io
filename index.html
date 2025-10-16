@@ -28,7 +28,7 @@
         }
         .hero {
             padding: 10rem 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/banner.png') no-repeat center center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://placehold.co/1920x1080/2c3e50/ecf0f1/png?text=Code+Background') no-repeat center center;
             background-size: cover;
             color: white;
         }
@@ -43,16 +43,16 @@
         .typed-cursor { font-size: 2rem; color: #0d6efd; }
         section { padding: 6rem 0; }
         .section-title { font-weight: 800; margin-bottom: 3.5rem; text-transform: uppercase; letter-spacing: 1.5px; }
-        .skill-card { background: #fff; border: 0; border-radius: 10px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .skill-icon { font-size: 3rem; color: #0d6efd; }
+        .skill-card { background: #fff; border: 0; border-radius: 10px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s; }
+        .skill-card:hover { transform: translateY(-5px); }
         .project-card { transition: transform 0.3s, box-shadow 0.3s; border: none; }
         .project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
         .tech-badge { background-color: #e9ecef; color: #212529; font-weight: 500; }
         .timeline { list-style: none; padding: 0; position: relative; }
-        .timeline:before { content: ''; position: absolute; top: 0; bottom: 0; width: 3px; background: #e9ecef; left: 1.25rem; }
-        .timeline-item { margin-bottom: 2rem; position: relative; }
+        .timeline:before { content: ''; position: absolute; top: 0; bottom: 0; width: 3px; background: #e9ecef; left: 1.25rem; border-radius: 3px; }
+        .timeline-item { margin-bottom: 2.5rem; position: relative; }
         .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-icon { position: absolute; left: 0; top: 0; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #0d6efd; color: white; display: flex; align-items: center; justify-content: center; z-index: 1; border: 3px solid #f8f9fa; }
+        .timeline-icon { position: absolute; left: 0; top: 0; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #0d6efd; color: white; display: flex; align-items: center; justify-content: center; z-index: 1; border: 4px solid #f8f9fa; }
         .timeline-content { margin-left: 4rem; background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .timeline-content h5 { font-weight: 700; }
         .timeline-content .date { font-weight: 500; color: #6c757d; font-size: 0.9rem; }
@@ -103,10 +103,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
                     <p class="lead">
-                       Lulusan S1 Teknik Informatika dari Universitas Muhammadiyah Tangerang dengan pengalaman di bidang IT Support
-termasuk troubleshooting, networking, hardware dan software. Memiliki pengalaman dalam beberapa proyek
-pengembangan web, membangun website menggunakan Framework Laravel. Dikenal sebagai individu yang analitis,
-mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
+                        Lulusan S1 Teknik Informatika dari Universitas Muhammadiyah Tangerang dengan pengalaman di bidang IT Support, termasuk troubleshooting, networking, hardware dan software[cite: 6]. Saya memiliki rekam jejak dalam beberapa proyek pengembangan web, membangun website menggunakan Framework Laravel[cite: 7]. Dikenal sebagai individu yang analitis, mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik[cite: 8].
                     </p>
                 </div>
             </div>
@@ -116,28 +113,41 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
     <section id="skills" class="bg-light">
         <div class="container">
             <h2 class="text-center section-title" data-aos="fade-up">Skills & Abilities</h2>
-            <div class="row text-center gy-4">
-                <h4 class="mb-3" data-aos="fade-up">Technical Skills</h4>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100"><div class="skill-card h-100"><i class="fab fa-laravel skill-icon mb-2"></i><h6>Laravel</h6></div></div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150"><div class="skill-card h-100"><i class="fab fa-php skill-icon mb-2"></i><h6>PHP</h6></div></div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200"><div class="skill-card h-100"><i class="fab fa-js-square skill-icon mb-2"></i><h6>JavaScript</h6></div></div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="250"><div class="skill-card h-100"><i class="fab fa-html5 skill-icon mb-2"></i><h6>HTML & CSS</h6></div></div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300"><div class="skill-card h-100"><i class="fas fa-network-wired skill-icon mb-2"></i><h6>Networking</h6></div></div>
-                <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="350"><div class="skill-card h-100"><i class="fas fa-tools skill-icon mb-2"></i><h6>Troubleshooting</h6></div></div>
-            </div>
-             <div class="row text-center mt-5 gy-4">
-                <h4 class="mb-3" data-aos="fade-up">Soft Skills</h4>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="skill-card h-100"><i class="fas fa-users skill-icon mb-2"></i><h6>Kerjasama Tim</h6></div></div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150"><div class="skill-card h-100"><i class="fas fa-lightbulb skill-icon mb-2"></i><h6>Pemecahan Masalah</h6></div></div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200"><div class="skill-card h-100"><i class="fas fa-comments skill-icon mb-2"></i><h6>Komunikasi</h6></div></div>
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250"><div class="skill-card h-100"><i class="fas fa-microphone-alt skill-icon mb-2"></i><h6>Public Speaking</h6></div></div>
+            <div class="row gy-5">
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-center mb-4">Technical Skills</h4>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-laravel skill-icon mb-2"></i><h6>Laravel</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-php skill-icon mb-2"></i><h6>PHP</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-js-square skill-icon mb-2"></i><h6>JavaScript</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-html5 skill-icon mb-2"></i><h6>HTML</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-css3-alt skill-icon mb-2"></i><h6>CSS</h6></div></div>
+                    </div>
+                </div>
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-center mb-4">Soft Skills</h4>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-2 col-md-4 col-6 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-users skill-icon mb-2"></i><h6>Kerjasama Tim</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-6 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-lightbulb skill-icon mb-2"></i><h6>Pemecahan Masalah</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-6 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-comments skill-icon mb-2"></i><h6>Komunikasi</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-6 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-microphone-alt skill-icon mb-2"></i><h6>Public Speaking</h6></div></div>
+                    </div>
+                </div>
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-center mb-4">Software & Tools</h4>
+                    <div class="row justify-content-center text-center">
+                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-file-word skill-icon mb-2"></i><h6>Microsoft Office</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-palette skill-icon mb-2"></i><h6>Adobe Photoshop</h6></div></div>
+                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-pen-ruler skill-icon mb-2"></i><h6>Canva</h6></div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     
     <section id="experience">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Work Experience</h2>
+            <h2 class="text-center section-title" data-aos="fade-up">Experience Journey</h2>
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <ul class="timeline">
@@ -146,12 +156,25 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
                             <div class="timeline-content">
                                 <h5>IT Support</h5>
                                 <p class="mb-1"><strong>PT Tritunggal Maju Sejahtera</strong></p>
-                                <div class="date">Februari 2024 - Sekarang</div>
-                                <ul class="mt-2">
-                                    <li>Melakukan perawatan perangkat keras PC dan sistem CCTV[cite: 11].</li>
-                                    <li>Menganalisis dan memperbaiki masalah sistem/jaringan[cite: 13].</li>
-                                    <li>Mengelola sistem seperti SQL Server 2008, Accurate, POS[cite: 15].</li>
+                                <div class="date">Februari 2024 - Sekarang [cite: 12]</div>
+                                <ul class="mt-2 small">
+                                    <li>Melakukan perawatan perangkat keras PC dan sistem CCTV secara berkala[cite: 11].</li>
+                                    <li>Menganalisis dan memperbaiki masalah sistem/jaringan untuk memastikan perangkat berfungsi normal[cite: 13].</li>
+                                    <li>Melakukan pengecekan dan pembaruan sistem operasi serta aplikasi[cite: 14].</li>
+                                    <li>Bertanggung jawab terhadap mesin pendukung seperti printer dan scanner[cite: 15].</li>
+                                    <li>Mengelola sistem: SQL Server 2008, Accurate online, Smile POS, Moka POS[cite: 15].</li>
+                                    <li>Melakukan pemasangan, konfigurasi, dan perawatan kamera CCTV (Analog & IP Camera)[cite: 15].</li>
+                                    <li>Memberikan dukungan teknis kepada tim dan karyawan untuk kelancaran operasional[cite: 15].</li>
                                 </ul>
+                            </div>
+                        </li>
+                        <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                            <div class="timeline-content">
+                                <h5>Project Web Developer</h5>
+                                <p class="mb-1"><strong>Freelance</strong></p>
+                                <div class="date">2022 - Sekarang [cite: 15]</div>
+                                <p class="mt-2 mb-0 small">Mengembangkan berbagai aplikasi web menggunakan Laravel untuk klien, termasuk sistem informasi, company profile, dan aplikasi manajemen internal[cite: 7, 15].</p>
                             </div>
                         </li>
                         <li class="timeline-item" data-aos="fade-up">
@@ -159,26 +182,61 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
                              <div class="timeline-content">
                                 <h5>Asisten Lab Komputer (Magang)</h5>
                                 <p class="mb-1"><strong>Universitas Muhammadiyah Tangerang</strong></p>
-                                <div class="date">September 2023 - Februari 2024</div>
-                                <p class="mt-2 mb-0">Mempersiapkan praktikum dan melakukan maintenance pada server dan komputer lab[cite: 96, 97].</p>
+                                <div class="date">September 2023 - Februari 2024 [cite: 98]</div>
+                                <p class="mt-2 mb-0 small">Mempersiapkan praktikum, membantu praktikan, dan melakukan maintenance pada server dan komputer di lab[cite: 96, 97].</p>
                             </div>
                         </li>
                          <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                            <div class="timeline-icon"><i class="fas fa-plane-departure"></i></div>
                              <div class="timeline-content">
                                 <h5>Web Apps System Developer (Magang)</h5>
                                 <p class="mb-1"><strong>GMF Aero Asia</strong></p>
-                                <div class="date">Juli 2023 - September 2023</div>
-                                <p class="mt-2 mb-0">Melakukan monitor dan update job card maintenance pesawat pada website internal[cite: 102, 103].</p>
+                                <div class="date">Juli 2023 - September 2023 [cite: 101]</div>
+                                <p class="mt-2 mb-0 small">Melakukan monitor dan update job card maintenance pesawat pada website internal xpream GMF[cite: 102, 103].</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-users-gear"></i></div>
+                             <div class="timeline-content">
+                                <h5>Kepala Divisi Litbang</h5>
+                                <p class="mb-1"><strong>Himpunan Mahasiswa (HIMTI UMT)</strong></p>
+                                <div class="date">2022 - 2023 [cite: 105]</div>
+                                <p class="mt-2 mb-0 small">Memimpin Divisi Penelitian dan Pengembangan[cite: 105].</p>
                             </div>
                         </li>
                         <li class="timeline-item" data-aos="fade-up">
                             <div class="timeline-icon"><i class="fas fa-people-group"></i></div>
                              <div class="timeline-content">
-                                <h5>Kepala Divisi Litbang</h5>
-                                <p class="mb-1"><strong>HIMTI UMT</strong></p>
-                                <div class="date">2022 - 2023</div>
-                                <p class="mt-2 mb-0">Memimpin divisi Penelitian dan Pengembangan di Himpunan Mahasiswa Teknik Informatika[cite: 105].</p>
+                                <h5>Anggota Divisi Litbang</h5>
+                                <p class="mb-1"><strong>Himpunan Mahasiswa (HIMTI UMT)</strong></p>
+                                <div class="date">2021 - 2022 [cite: 105]</div>
+                            </div>
+                        </li>
+                        <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-box-open"></i></div>
+                            <div class="timeline-content">
+                                <h5>Staf Logistik</h5>
+                                <p class="mb-1"><strong>PT Hokita Global International</strong></p>
+                                <div class="date">Januari 2021 - Desember 2021 [cite: 91]</div>
+                                <p class="mt-2 mb-0 small">Membuat PO, menginput pesanan customer di sistem, dan membuat surat jalan[cite: 78, 79].</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-shield-halved"></i></div>
+                            <div class="timeline-content">
+                                <h5>Satuan Pengamanan</h5>
+                                <p class="mb-1"><strong>PT Kautsar Abadi</strong></p>
+                                <div class="date">Februari 2019 - Maret 2020 [cite: 92]</div>
+                                <p class="mt-2 mb-0 small">Membuat laporan harian, mengelola absensi, dan memantau CCTV[cite: 81, 82, 83].</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item" data-aos="fade-up">
+                            <div class="timeline-icon"><i class="fas fa-industry"></i></div>
+                            <div class="timeline-content">
+                                <h5>Operator Produksi</h5>
+                                <p class="mb-1"><strong>PT Bola Intan Elastic</strong></p>
+                                <div class="date">Agustus 2018 - Februari 2019 [cite: 93]</div>
+                                <p class="mt-2 mb-0 small">Membuat cairan warna, menyortir bahan, dan menimbang hasil produksi[cite: 85, 86, 87].</p>
                             </div>
                         </li>
                     </ul>
@@ -189,14 +247,14 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
 
     <section id="projects" class="bg-light">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Freelance Projects</h2>
+            <h2 class="text-center section-title" data-aos="fade-up">Freelance Projects Showcase</h2>
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/2ecc71/ffffff/png?text=Sistem+Info+Kesehatan" class="card-img-top" alt="Proyek Sistem Informasi Pelayanan Kesehatan">
+                        <img src="https://placehold.co/600x400/2ecc71/ffffff/png?text=Sistem+Kesehatan" class="card-img-top" alt="Proyek Sistem Informasi Pelayanan Kesehatan">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Sistem Informasi Pelayanan Kesehatan</h5>
-                            <p class="card-text">Membangun sistem untuk Taqi Medika dengan fitur pengelolaan pendaftaran, data pasien, stok obat, dan tindakan medis[cite: 15].</p>
+                            <p class="card-text small">Membangun sistem untuk Taqi Medika dengan fitur pengelolaan pendaftaran, data pasien, stok obat, dan tindakan medis[cite: 15].</p>
                             <div class="mt-auto pt-3">
                                 <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">MySQL</span>
                             </div>
@@ -205,10 +263,10 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/3498db/ffffff/png?text=Sistem+Bimbingan+Skripsi" class="card-img-top" alt="Proyek Sistem Bimbingan Skripsi">
+                        <img src="https://placehold.co/600x400/3498db/ffffff/png?text=Sistem+Bimbingan" class="card-img-top" alt="Proyek Sistem Bimbingan Skripsi">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Sistem Bimbingan Kerja Praktik & Skripsi</h5>
-                            <p class="card-text">Sistem untuk UMT yang mengelola data mahasiswa, dosen, kuota bimbingan, serta fitur approval pengajuan[cite: 15].</p>
+                            <h5 class="card-title">Sistem Bimbingan Akademik</h5>
+                            <p class="card-text small">Sistem untuk UMT yang mengelola data mahasiswa, dosen, kuota bimbingan, serta fitur approval pengajuan kerja praktik & skripsi[cite: 15].</p>
                             <div class="mt-auto pt-3">
                                 <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">Bootstrap</span>
                             </div>
@@ -217,12 +275,48 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/e74c3c/ffffff/png?text=Website+Company+Profile" class="card-img-top" alt="Proyek Company Profile">
+                        <img src="https://placehold.co/600x400/9b59b6/ffffff/png?text=Sistem+Cuti+Online" class="card-img-top" alt="Proyek Sistem Cuti">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Sistem Pengajuan Cuti</h5>
+                            <p class="card-text small">Membangun aplikasi web untuk PT Union Foods yang memungkinkan karyawan mengajukan cuti secara online dan mengekspor data pengajuan[cite: 30, 36, 37, 38].</p>
+                            <div class="mt-auto pt-3">
+                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 project-card">
+                        <img src="https://placehold.co/600x400/e67e22/ffffff/png?text=Maintenance+Web" class="card-img-top" alt="Proyek Maintenance Web">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Maintenance Web Garda Mitra Nasional</h5>
+                            <p class="card-text small">Melakukan perbaikan bug kritikal, termasuk mengatasi error 500 pada fitur download slip gaji dan melakukan update tipe data di database[cite: 53, 55, 56].</p>
+                            <div class="mt-auto pt-3">
+                                <span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge me-1">MySQL</span><span class="badge tech-badge">Debugging</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 project-card">
+                        <img src="https://placehold.co/600x400/e74c3c/ffffff/png?text=Company+Profile" class="card-img-top" alt="Proyek Company Profile">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Web Company Profile & Lowongan Kerja</h5>
-                            <p class="card-text">Membuat website untuk LPK Yadeffa, mengelola pendaftaran pelatihan, lowongan, berita, dan fitur unduh data pelamar[cite: 15].</p>
+                            <p class="card-text small">Membuat website untuk LPK Yadeffa, mengelola pendaftaran pelatihan, lowongan, berita, dan fitur unduh data pelamar[cite: 15].</p>
                             <div class="mt-auto pt-3">
                                 <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 project-card">
+                        <img src="https://placehold.co/600x400/1abc9c/ffffff/png?text=Website+HIMTI" class="card-img-top" alt="Proyek Website HIMTI">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Website HIMTI Universitas</h5>
+                            <p class="card-text small">Mengembangkan website organisasi mahasiswa dengan dashboard admin, manajemen anggota, artikel, pendaftaran, dan UI yang responsif[cite: 58, 60, 63, 74].</p>
+                            <div class="mt-auto pt-3">
+                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">Bootstrap</span>
                             </div>
                         </div>
                     </div>
@@ -239,15 +333,15 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
                     <div class="skill-card text-center h-100">
                         <i class="fas fa-university skill-icon mb-3"></i>
                         <h4>Universitas Muhammadiyah Tangerang</h4>
-                        <p class="text-muted mb-1">S1 Teknik Informatika | 2020 - 2024</p>
-                        <p><strong>IPK: 3.72</strong></p>
+                        <p class="text-muted mb-1">S1 Teknik Informatika | 2020 - 2024 [cite: 117]</p>
+                        <p><strong>IPK: 3.72</strong> [cite: 117]</p>
                     </div>
                 </div>
                 <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
                     <div class="skill-card text-center h-100">
                          <i class="fas fa-school skill-icon mb-3"></i>
                         <h4>SMK Bangun Nusantara</h4>
-                        <p class="text-muted mb-1">Teknik Komputer dan Jaringan | 2014 - 2017</p>
+                        <p class="text-muted mb-1">Teknik Komputer dan Jaringan | 2014 - 2017 [cite: 117, 118]</p>
                     </div>
                 </div>
             </div>
@@ -259,10 +353,10 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
             <h2 class="text-center section-title" data-aos="fade-up">Contact</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <p class="lead mb-4">Saya terbuka untuk diskusi, kolaborasi, atau peluang kerja. Silakan hubungi saya melalui detail di bawah ini atau kirim pesan melalui form.</p>
+                    <p class="lead mb-4">Saya terbuka untuk diskusi, kolaborasi, atau peluang kerja. Silakan hubungi saya melalui detail di bawah ini.</p>
                     <div class="d-flex justify-content-center flex-wrap">
-                        <a href="mailto:ahmadsaipullah140@gmail.com" class="btn btn-outline-dark m-2"><i class="fas fa-envelope me-2"></i>ahmadsaipullah140@gmail.com</a>
-                        <a href="https://wa.me/6287880182823" class="btn btn-outline-dark m-2"><i class="fab fa-whatsapp me-2"></i>0878-8018-2823</a>
+                        <a href="mailto:ahmadsaipullah140@gmail.com" class="btn btn-outline-dark m-2"><i class="fas fa-envelope me-2"></i>ahmadsaipullah140@gmail.com [cite: 3]</a>
+                        <a href="https://wa.me/6287880182823" class="btn btn-outline-dark m-2"><i class="fab fa-whatsapp me-2"></i>0878-8018-2823 [cite: 4]</a>
                     </div>
                 </div>
             </div>
@@ -303,5 +397,3 @@ mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
     </script>
 </body>
 </html>
-
-
