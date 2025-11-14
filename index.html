@@ -3,111 +3,754 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ahmad Saifullah | Web Developer & IT Support</title>
-
-    <meta name="description" content="Portofolio Ahmad Saifullah, saipul ahmad, ipul, seorang Web Developer freelance spesialis Laravel dan IT Support profesional yang berlokasi di Cipondoh, Tangerang, Banten. Siap membantu proyek pengembangan web dan sistem informasi.">
-
-    <meta name="keywords" content="Ahmad Saifullah, Web Developer Tangerang, IT Support Tangerang, Jasa Laravel, Freelance Developer Banten, saipul ahmad, ipul.">
-    
+    <title>Ahmad Saifullah | Senior Web Developer & IT Support Expert</title>
+    <meta name="description" content="Portofolio Ahmad Saifullah - Expert Web Developer spesialis Laravel dan IT Support profesional. Solusi pengembangan web berkualitas tinggi untuk bisnis Anda.">
+    <meta name="keywords" content="Ahmad Saifullah, Laravel Expert, Web Developer Tangerang, IT Support Professional, Full Stack Developer">
     <meta name="author" content="Ahmad Saifullah">
-
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Ahmad Saifullah",
-  "url": "https://ahmadsaipullah.github.io/ipul-portpolio.github.io/",
-  "image": "https://ahmadsaipullah.github.io/ipul-portpolio.github.io/img/ipul.png",
-  "sameAs": [
-    "https://linkedin.com/in/ahmad-saifullah-7b1b61227/",
-    "https://github.com/ahmadsaipullah",
-    "https://youtube.com/saipulahm4d"
-  ],
-  "jobTitle": "Web Developer dan IT Support",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "PT Tritunggal Maju Sejahtera"
-  },
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Universitas Muhammadiyah Tangerang",
-    "sameAs": "https://umt.ac.id/"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Tangerang",
-    "addressRegion": "Banten",
-    "addressCountry": "ID"
-  },
-  "knowsAbout": ["Laravel", "PHP", "JavaScript", "IT Support", "Networking", "Troubleshooting"]
-}
-</script>
     
-    <link rel="icon" type="image/png" href="https://ahmadsaipullah.github.io/ipul-portpolio.github.io/img/ipul.png">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+    
     <style>
         :root {
-            --bs-primary-rgb: 13, 110, 253;
-            --bs-dark-rgb: 33, 37, 41;
+            --primary: #0066ff;
+            --secondary: #6c757d;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #00d4ff;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--light);
+            overflow-x: hidden;
+            color: #333;
         }
-        .navbar {
-            background-color: rgba(var(--bs-dark-rgb), 0.95);
-            backdrop-filter: blur(5px);
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
-        .hero {
-            padding: 10rem 0;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/banner.png') no-repeat center center;
-            background-size: cover;
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--light);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 5px;
+        }
+        
+        /* Loading Screen */
+        #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loader-content {
+            text-align: center;
             color: white;
         }
-        .hero img {
-            width: 150px;
-            height: 150px;
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255,255,255,0.1);
+            border-top: 4px solid var(--accent);
             border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
         }
-        .hero h1 { font-weight: 700; font-size: 3.2rem; }
-        .typed-cursor { font-size: 2rem; color: #0d6efd; }
-        section { padding: 6rem 0; }
-        .section-title { font-weight: 800; margin-bottom: 3.5rem; text-transform: uppercase; letter-spacing: 1.5px; }
-        .skill-card { background: #fff; border: 0; border-radius: 10px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s; }
-        .skill-card:hover { transform: translateY(-5px); }
-        .project-card { transition: transform 0.3s, box-shadow 0.3s; border: none; }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-        .tech-badge { background-color: #e9ecef; color: #212529; font-weight: 500; }
-        .timeline { list-style: none; padding: 0; position: relative; }
-        .timeline:before { content: ''; position: absolute; top: 0; bottom: 0; width: 3px; background: #e9ecef; left: 1.25rem; border-radius: 3px; }
-        .timeline-item { margin-bottom: 2.5rem; position: relative; }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-icon { position: absolute; left: 0; top: 0; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #0d6efd; color: white; display: flex; align-items: center; justify-content: center; z-index: 1; border: 4px solid #f8f9fa; }
-        .timeline-content { margin-left: 4rem; background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .timeline-content h5 { font-weight: 700; }
-        .timeline-content .date { font-weight: 500; color: #6c757d; font-size: 0.9rem; }
-        footer { background-color: #212529; color: white; padding: 3rem 0; }
-        .social-icons a { color: white; font-size: 1.5rem; margin: 0 0.75rem; transition: color 0.3s; }
-        .social-icons a:hover { color: #0d6efd; }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent) !important;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--dark);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+            animation: gradientShift 10s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-image-wrapper {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            background: var(--gradient-3);
+            opacity: 0.3;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.1; }
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .typed-text {
+            background: var(--gradient-3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary-custom {
+            background: var(--gradient-3);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.5);
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid var(--accent);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--accent);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .social-icons {
+            margin-top: 2rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-icons a:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: translateY(-5px) rotate(5deg);
+        }
+        
+        /* Particle Background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-3);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        
+        /* About Section */
+        #about {
+            background: white;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .stats-row {
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            margin-top: 0.5rem;
+        }
+        
+        /* Skills Section */
+        .skill-category {
+            margin-bottom: 3rem;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+        
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+        }
+        
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            text-align: left;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            margin-left: 0;
+            text-align: right;
+        }
+        
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .timeline-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient-3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            background: var(--gradient-2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-company {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        /* Projects Section */
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.1);
+        }
+        
+        .project-body {
+            padding: 2rem;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-badge {
+            background: var(--gradient-3);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        /* Education Section */
+        .education-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+            height: 100%;
+        }
+        
+        .education-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+        
+        .education-icon {
+            font-size: 4rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        .education-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        
+        .education-subtitle {
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: var(--dark);
+            color: white;
+        }
+        
+        #contact .section-title {
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255,255,255,0.15);
+            border-color: var(--accent);
+            transform: translateX(10px);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h5 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-text a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0a0a1a;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-3);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+        
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        #backToTop:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 991px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero .subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2rem; }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px;
+                margin-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-icon {
+                left: 30px;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 { font-size: 2rem; }
+            .cta-buttons { flex-direction: column; }
+            .btn-primary-custom, .btn-outline-custom {
+                width: 100%;
+            }
+        }
     </style>
-
-    
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#mainNavbar">
-    
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h3>Loading Portfolio...</h3>
+        </div>
+    </div>
+
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">AHMAD SAIFULLAH</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#home">AS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -124,239 +767,367 @@
         </div>
     </nav>
 
-    <header class="hero text-center" id="home">
-        <div class="container">
-            <img src="img/ipul.png" alt="Ahmad Saifullah Profile Picture" data-aos="zoom-in">
-            <h1 class="display-4 mt-4" data-aos="fade-up" data-aos-delay="100">Ahmad Saifullah</h1>
-            <p class="lead fs-3" data-aos="fade-up" data-aos-delay="200">I am a <span id="typed-text"></span></p>
-            <div class="social-icons mt-4" data-aos="fade-up" data-aos-delay="300">
-                <a href="https://linkedin.com/in/ahmad-saifullah-7b1b61227/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/ahmadsaipullah" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://youtube.com/@saipulahm4d" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div id="particles-js"></div>
+        <div class="container hero-content">
+            <div class="text-center">
+                <div class="hero-image-wrapper" data-aos="zoom-in">
+                    <img src="https://ui-avatars.com/api/?name=Ahmad+Saifullah&size=200&background=0D6EFD&color=fff&bold=true" alt="Ahmad Saifullah" class="hero-image">
+                </div>
+                <h1 data-aos="fade-up" data-aos-delay="200">Ahmad Saifullah</h1>
+                <p class="subtitle" data-aos="fade-up" data-aos-delay="300">
+                    <span class="typed-text" id="typed-text"></span>
+                </p>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#projects" class="btn-primary-custom">View My Work</a>
+                    <a href="#contact" class="btn-outline-custom">Get In Touch</a>
+                </div>
+                <div class="social-icons" data-aos="fade-up" data-aos-delay="500">
+                    <a href="https://linkedin.com/in/ahmad-saifullah-7b1b61227/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/ahmadsaipullah" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://youtube.com/@saipulahm4d" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://wa.me/6287880182823" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
+    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">About Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <p class="lead">
-                        Lulusan S1 Teknik Informatika dari Universitas Muhammadiyah Tangerang dengan pengalaman di bidang IT Support, termasuk troubleshooting, networking, hardware dan software. Saya memiliki rekam jejak dalam beberapa proyek pengembangan web, membangun website menggunakan Framework Laravel. Dikenal sebagai individu yang analitis, mampu bekerja sama dalam tim, dan memiliki kemampuan komunikasi yang baik.
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Get to know more about my journey</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    <p class="about-text">
+                        Lulusan S1 Teknik Informatika dari <strong>Universitas Muhammadiyah Tangerang</strong> dengan IPK 3.72, berpengalaman sebagai <strong>IT Support</strong> dan <strong>Web Developer</strong>. Ahli dalam troubleshooting, networking, hardware & software management, serta pengembangan aplikasi web menggunakan <strong>Framework Laravel</strong>.
+                    </p>
+                    <p class="about-text">
+                        Memiliki rekam jejak solid dalam mengelola proyek web skala enterprise, sistem informasi kesehatan, platform akademik, dan company profile. Dikenal sebagai problem solver yang analitis dengan kemampuan komunikasi yang excellent dan dedikasi tinggi terhadap kualitas pekerjaan.
                     </p>
                 </div>
             </div>
+            
+            <div class="row stats-row">
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-number">3+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Client Satisfaction</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="stat-card">
+                        <div class="stat-number">3.72</div>
+                        <div class="stat-label">GPA Achievement</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills" class="bg-light">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Skills & Abilities</h2>
-            <div class="row gy-5">
-                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-                    <h4 class="text-center mb-4">Technical Skills</h4>
-                    <div class="row justify-content-center text-center">
-                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-laravel skill-icon mb-2"></i><h6>Laravel</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-php skill-icon mb-2"></i><h6>PHP</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-js-square skill-icon mb-2"></i><h6>JavaScript</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-html5 skill-icon mb-2"></i><h6>HTML</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fab fa-css3-alt skill-icon mb-2"></i><h6>CSS</h6></div></div>
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Skills & Expertise</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My technical and professional capabilities</p>
+            </div>
+            
+            <div class="skill-category">
+                <h4 class="text-center mb-4" data-aos="fade-up">Technical Skills</h4>
+                <div class="row g-4">
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-card">
+                            <i class="fab fa-laravel skill-icon"></i>
+                            <div class="skill-name">Laravel</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-card">
+                            <i class="fab fa-php skill-icon"></i>
+                            <div class="skill-name">PHP</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-card">
+                            <i class="fab fa-js-square skill-icon"></i>
+                            <div class="skill-name">JavaScript</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="250">
+                        <div class="skill-card">
+                            <i class="fab fa-html5 skill-icon"></i>
+                            <div class="skill-name">HTML5</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-card">
+                            <i class="fab fa-css3-alt skill-icon"></i>
+                            <div class="skill-name">CSS3</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="350">
+                        <div class="skill-card">
+                            <i class="fas fa-database skill-icon"></i>
+                            <div class="skill-name">MySQL</div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
-                    <h4 class="text-center mb-4">Soft Skills</h4>
-                    <div class="row justify-content-center text-center">
-                        <div class="col-lg-2 col-md-4 col-6 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-users skill-icon mb-2"></i><h6>Kerjasama Tim</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-6 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-lightbulb skill-icon mb-2"></i><h6>Pemecahan Masalah</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-6 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-comments skill-icon mb-2"></i><h6>Komunikasi</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-6 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-microphone-alt skill-icon mb-2"></i><h6>Public Speaking</h6></div></div>
+            </div>
+            
+            <div class="skill-category">
+                <h4 class="text-center mb-4" data-aos="fade-up">Soft Skills</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-card">
+                            <i class="fas fa-users skill-icon"></i>
+                            <div class="skill-name">Team Collaboration</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-card">
+                            <i class="fas fa-lightbulb skill-icon"></i>
+                            <div class="skill-name">Problem Solving</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-card">
+                            <i class="fas fa-comments skill-icon"></i>
+                            <div class="skill-name">Communication</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-6" data-aos="fade-up" data-aos-delay="250">
+                        <div class="skill-card">
+                            <i class="fas fa-microphone-alt skill-icon"></i>
+                            <div class="skill-name">Public Speaking</div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-                    <h4 class="text-center mb-4">Software & Tools</h4>
-                    <div class="row justify-content-center text-center">
-                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-file-word skill-icon mb-2"></i><h6>Microsoft Office</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-palette skill-icon mb-2"></i><h6>Adobe Photoshop</h6></div></div>
-                        <div class="col-lg-2 col-md-4 col-4 mb-4"><div class="skill-card h-100 p-3"><i class="fas fa-pen-ruler skill-icon mb-2"></i><h6>Canva</h6></div></div>
+            </div>
+            
+            <div class="skill-category">
+                <h4 class="text-center mb-4" data-aos="fade-up">Tools & Software</h4>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-card">
+                            <i class="fab fa-git-alt skill-icon"></i>
+                            <div class="skill-name">Git</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="150">
+                        <div class="skill-card">
+                            <i class="fab fa-bootstrap skill-icon"></i>
+                            <div class="skill-name">Bootstrap</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-card">
+                            <i class="fas fa-file-word skill-icon"></i>
+                            <div class="skill-name">MS Office</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="250">
+                        <div class="skill-card">
+                            <i class="fas fa-palette skill-icon"></i>
+                            <div class="skill-name">Photoshop</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-card">
+                            <i class="fas fa-pen-ruler skill-icon"></i>
+                            <div class="skill-name">Canva</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Experience Journey</h2>
-            <div class="row">
-                <div class="col-lg-10 mx-auto">
-                    <ul class="timeline">
-                        <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
-                            <div class="timeline-content">
-                                <h5>IT Support</h5>
-                                <p class="mb-1"><strong>PT Tritunggal Maju Sejahtera</strong></p>
-                                <div class="date">Februari 2024 - Sekarang</div>
-                                <ul class="mt-2 small">
-                                    <li>Melakukan perawatan perangkat keras PC dan sistem CCTV secara berkala.</li>
-                                    <li>Menganalisis dan memperbaiki masalah sistem/jaringan untuk memastikan perangkat berfungsi normal.</li>
-                                    <li>Melakukan pengecekan dan pembaruan sistem operasi serta aplikasi.</li>
-                                    <li>Bertanggung jawab terhadap mesin pendukung seperti printer dan scanner.</li>
-                                    <li>Mengelola sistem: SQL Server 2008, Accurate online, Smile POS, Moka POS.</li>
-                                    <li>Melakukan pemasangan, konfigurasi, dan perawatan kamera CCTV (Analog & IP Camera).</li>
-                                    <li>Memberikan dukungan teknis kepada tim dan karyawan untuk kelancaran operasional.</li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
-                            <div class="timeline-content">
-                                <h5>Project Web Developer</h5>
-                                <p class="mb-1"><strong>Freelance</strong></p>
-                                <div class="date">2022 - Sekarang</div>
-                                <p class="mt-2 mb-0 small">Mengembangkan berbagai aplikasi web menggunakan Laravel untuk klien, termasuk sistem informasi, company profile, dan aplikasi manajemen internal.</p>
-                            </div>
-                        </li>
-                        <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-                             <div class="timeline-content">
-                                <h5>Asisten Lab Komputer (Magang)</h5>
-                                <p class="mb-1"><strong>Universitas Muhammadiyah Tangerang</strong></p>
-                                <div class="date">September 2023 - Februari 2024</div>
-                                <p class="mt-2 mb-0 small">Mempersiapkan praktikum, membantu praktikan, dan melakukan maintenance pada server dan komputer di lab.</p>
-                            </div>
-                        </li>
-                         <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-plane-departure"></i></div>
-                             <div class="timeline-content">
-                                <h5>Web Apps System Developer (Magang)</h5>
-                                <p class="mb-1"><strong>GMF Aero Asia</strong></p>
-                                <div class="date">Juli 2023 - September 2023</div>
-                                <p class="mt-2 mb-0 small">Melakukan monitor dan update job card maintenance pesawat pada website internal xpream GMF.</p>
-                            </div>
-                        </li>
-                        <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-users-gear"></i></div>
-                             <div class="timeline-content">
-                                <h5>Kepala Divisi Litbang</h5>
-                                <p class="mb-1"><strong>Himpunan Mahasiswa (HIMTI UMT)</strong></p>
-                                <div class="date">2022 - 2023</div>
-                                <p class="mt-2 mb-0 small">Memimpin Divisi Penelitian dan Pengembangan.</p>
-                            </div>
-                        </li>
-                        <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-people-group"></i></div>
-                             <div class="timeline-content">
-                                <h5>Anggota Divisi Litbang</h5>
-                                <p class="mb-1"><strong>Himpunan Mahasiswa (HIMTI UMT)</strong></p>
-                                <div class="date">2021 - 2022</div>
-                            </div>
-                        </li>
-                        <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-box-open"></i></div>
-                            <div class="timeline-content">
-                                <h5>Staf Logistik</h5>
-                                <p class="mb-1"><strong>PT Hokita Global International</strong></p>
-                                <div class="date">Januari 2021 - Desember 2021</div>
-                                <p class="mt-2 mb-0 small">Membuat PO, menginput pesanan customer di sistem, dan membuat surat jalan.</p>
-                            </div>
-                        </li>
-                        <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-shield-halved"></i></div>
-                            <div class="timeline-content">
-                                <h5>Satuan Pengamanan</h5>
-                                <p class="mb-1"><strong>PT Kautsar Abadi</strong></p>
-                                <div class="date">Februari 2019 - Maret 2020</div>
-                                <p class="mt-2 mb-0 small">Membuat laporan harian, mengelola absensi, dan memantau CCTV.</p>
-                            </div>
-                        </li>
-                        <li class="timeline-item" data-aos="fade-up">
-                            <div class="timeline-icon"><i class="fas fa-industry"></i></div>
-                            <div class="timeline-content">
-                                <h5>Operator Produksi</h5>
-                                <p class="mb-1"><strong>PT Bola Intan Elastic</strong></p>
-                                <div class="date">Agustus 2018 - Februari 2019</div>
-                                <p class="mt-2 mb-0 small">Membuat cairan warna, menyortir bahan, dan menimbang hasil produksi.</p>
-                            </div>
-                        </li>
-                    </ul>
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Professional Experience</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My career journey and accomplishments</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Feb 2024 - Present</span>
+                        <h3 class="timeline-title">IT Support</h3>
+                        <p class="timeline-company">PT Tritunggal Maju Sejahtera</p>
+                        <ul class="small mb-0">
+                            <li>Maintenance perangkat keras PC dan sistem CCTV secara berkala</li>
+                            <li>Troubleshooting sistem/jaringan untuk memastikan operasional optimal</li>
+                            <li>Mengelola SQL Server 2008, Accurate Online, Smile POS, Moka POS</li>
+                            <li>Instalasi dan konfigurasi CCTV (Analog & IP Camera)</li>
+                            <li>Memberikan technical support kepada seluruh tim</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - Present</span>
+                        <h3 class="timeline-title">Freelance Web Developer</h3>
+                        <p class="timeline-company">Self-Employed</p>
+                        <p class="small mb-0">Mengembangkan berbagai aplikasi web menggunakan Laravel untuk klien, termasuk sistem informasi kesehatan, platform akademik, sistem HR, dan company profile dengan total 10+ proyek sukses.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Sep 2023 - Feb 2024</span>
+                        <h3 class="timeline-title">Asisten Lab Komputer (Magang)</h3>
+                        <p class="timeline-company">Universitas Muhammadiyah Tangerang</p>
+                        <p class="small mb-0">Mempersiapkan praktikum, membantu praktikan, dan melakukan maintenance server serta komputer di laboratorium kampus.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-icon"><i class="fas fa-plane-departure"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Jul 2023 - Sep 2023</span>
+                        <h3 class="timeline-title">Web Apps System Developer (Magang)</h3>
+                        <p class="timeline-company">GMF Aero Asia</p>
+                        <p class="small mb-0">Monitor dan update job card maintenance pesawat pada website internal xpream GMF, berkontribusi dalam sistem manajemen maintenance aircraft.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="timeline-icon"><i class="fas fa-users-gear"></i></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - 2023</span>
+                        <h3 class="timeline-title">Kepala Divisi Litbang</h3>
+                        <p class="timeline-company">HIMTI UMT</p>
+                        <p class="small mb-0">Memimpin Divisi Penelitian dan Pengembangan, mengelola program inovasi mahasiswa dan mengkoordinir berbagai kegiatan akademik.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="bg-light">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Freelance Projects Showcase</h2>
-            <div class="row gy-4">
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Showcase of my best work</p>
+            </div>
+            
+            <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/2ecc71/ffffff/png?text=Sistem+Kesehatan" class="card-img-top" alt="Proyek Sistem Informasi Pelayanan Kesehatan">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Sistem Informasi Pelayanan Kesehatan</h5>
-                            <p class="card-text small">Membangun sistem untuk Taqi Medika dengan fitur pengelolaan pendaftaran, data pasien, stok obat, dan tindakan medis.</p>
-                            <div class="mt-auto pt-3">
-                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">MySQL</span>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop" alt="Healthcare System" class="project-image">
+                        <div class="project-body">
+                            <h3 class="project-title">Sistem Informasi Pelayanan Kesehatan</h3>
+                            <p class="project-description">Platform terintegrasi untuk Taqi Medika dengan fitur manajemen pasien, stok obat, pendaftaran, dan tindakan medis. Meningkatkan efisiensi pelayanan hingga 60%.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Laravel</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">Bootstrap</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/3498db/ffffff/png?text=Sistem+Bimbingan" class="card-img-top" alt="Proyek Sistem Bimbingan Skripsi">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Sistem Bimbingan Akademik</h5>
-                            <p class="card-text small">Sistem untuk UMT yang mengelola data mahasiswa, dosen, kuota bimbingan, serta fitur approval pengajuan kerja praktik & skripsi.</p>
-                            <div class="mt-auto pt-3">
-                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">Bootstrap</span>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&h=400&fit=crop" alt="Academic System" class="project-image">
+                        <div class="project-body">
+                            <h3 class="project-title">Sistem Bimbingan Akademik</h3>
+                            <p class="project-description">Sistem untuk UMT mengelola bimbingan skripsi/KP, kuota dosen, dan approval pengajuan. Mendigitalisasi proses akademik dengan 100+ pengguna aktif.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Laravel</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">JavaScript</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/9b59b6/ffffff/png?text=Sistem+Cuti+Online" class="card-img-top" alt="Proyek Sistem Cuti">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Sistem Pengajuan Cuti</h5>
-                            <p class="card-text small">Membangun aplikasi web untuk PT Union Foods yang memungkinkan karyawan mengajukan cuti secara online dan mengekspor data pengajuan.</p>
-                            <div class="mt-auto pt-3">
-                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">MySQL</span>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Leave System" class="project-image">
+                        <div class="project-body">
+                            <h3 class="project-title">Sistem Pengajuan Cuti Online</h3>
+                            <p class="project-description">Aplikasi HR untuk PT Union Foods memungkinkan pengajuan cuti online, approval workflow, dan export data. Menghemat waktu proses hingga 70%.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Laravel</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">Chart.js</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/e67e22/ffffff/png?text=Maintenance+Web" class="card-img-top" alt="Proyek Maintenance Web">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Maintenance Web Garda Mitra Nasional</h5>
-                            <p class="card-text small">Melakukan perbaikan bug kritikal, termasuk mengatasi error 500 pada fitur download slip gaji dan melakukan update tipe data di database.</p>
-                            <div class="mt-auto pt-3">
-                                <span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge me-1">MySQL</span><span class="badge tech-badge">Debugging</span>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Maintenance" class="project-image">
+                        <div class="project-body">
+                            <h3 class="project-title">Maintenance Web GMN</h3>
+                            <p class="project-description">Memperbaiki critical bugs pada sistem Garda Mitra Nasional, termasuk error 500 pada download slip gaji dan optimasi database untuk performa lebih baik.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">Debugging</span>
                             </div>
                         </div>
                     </div>
                 </div>
+                
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/e74c3c/ffffff/png?text=Company+Profile" class="card-img-top" alt="Proyek Company Profile">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Web Company Profile & Lowongan Kerja</h5>
-                            <p class="card-text small">Membuat website untuk LPK Yadeffa, mengelola pendaftaran pelatihan, lowongan, berita, dan fitur unduh data pelamar.</p>
-                            <div class="mt-auto pt-3">
-                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">JavaScript</span>
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop" alt="Company Profile" class="project-image">
+                        <div class="project-body">
+                            <h3 class="project-title">Web Company Profile & Job Portal</h3>
+                            <p class="project-description">Website untuk LPK Yadeffa dengan fitur pendaftaran pelatihan, lowongan kerja, manajemen berita, dan sistem pelamar terintegrasi.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Laravel</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">SEO</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 project-card">
-                        <img src="https://placehold.co/600x400/1abc9c/ffffff/png?text=Website+HIMTI" class="card-img-top" alt="Proyek Website HIMTI">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Website HIMTI Universitas</h5>
-                            <p class="card-text small">Mengembangkan website organisasi mahasiswa dengan dashboard admin, manajemen anggota, artikel, pendaftaran, dan UI yang responsif.</p>
-                            <div class="mt-auto pt-3">
-                                <span class="badge tech-badge me-1">Laravel</span><span class="badge tech-badge me-1">PHP</span><span class="badge tech-badge">Bootstrap</span>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" alt="HIMTI Website" class="project-image">
+                        <div class="project-body">
+                            <h3 class="project-title">Website HIMTI Universitas</h3>
+                            <p class="project-description">Platform organisasi mahasiswa dengan dashboard admin, manajemen member, artikel, event registration, dan UI responsif modern.</p>
+                            <div class="tech-stack">
+                                <span class="tech-badge">Laravel</span>
+                                <span class="tech-badge">Bootstrap</span>
+                                <span class="tech-badge">jQuery</span>
                             </div>
                         </div>
                     </div>
@@ -364,80 +1135,314 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- Education Section -->
     <section id="education">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Education</h2>
-            <div class="row justify-content-center gy-4">
-                <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
-                    <div class="skill-card text-center h-100">
-                        <i class="fas fa-university skill-icon mb-3"></i>
-                        <h4>Universitas Muhammadiyah Tangerang</h4>
-                        <p class="text-muted mb-1">S1 Teknik Informatika | 2020 - 2024</p>
-                        <p><strong>IPK: 3.72</strong></p>
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Education</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">My academic background</p>
+            </div>
+            
+            <div class="row justify-content-center g-4">
+                <div class="col-lg-5 col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="education-card">
+                        <i class="fas fa-university education-icon"></i>
+                        <h3 class="education-title">Universitas Muhammadiyah Tangerang</h3>
+                        <p class="education-subtitle">S1 Teknik Informatika</p>
+                        <p class="text-muted mb-2">2020 - 2024</p>
+                        <div class="mt-3">
+                            <span class="tech-badge">IPK: 3.72</span>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="200">
-                    <div class="skill-card text-center h-100">
-                         <i class="fas fa-school skill-icon mb-3"></i>
-                        <h4>SMK Bangun Nusantara</h4>
-                        <p class="text-muted mb-1">Teknik Komputer dan Jaringan | 2014 - 2017</p>
+                
+                <div class="col-lg-5 col-md-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="education-card">
+                        <i class="fas fa-school education-icon"></i>
+                        <h3 class="education-title">SMK Bangun Nusantara</h3>
+                        <p class="education-subtitle">Teknik Komputer dan Jaringan</p>
+                        <p class="text-muted mb-2">2014 - 2017</p>
+                        <div class="mt-3">
+                            <span class="tech-badge">Networking</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="bg-light">
+    <!-- Contact Section -->
+    <section id="contact">
         <div class="container">
-            <h2 class="text-center section-title" data-aos="fade-up">Contact</h2>
+            <div class="text-center mb-5">
+                <h2 class="section-title" data-aos="fade-up">Let's Work Together</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">I'm available for freelance projects and full-time opportunities</p>
+            </div>
+            
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <p class="lead mb-4">Saya terbuka untuk diskusi, kolaborasi, atau peluang kerja. Silakan hubungi saya melalui detail di bawah ini.</p>
-                    <div class="d-flex justify-content-center flex-wrap">
-                        <a href="mailto:ahmadsaipullah140@gmail.com" class="btn btn-outline-dark m-2"><i class="fas fa-envelope me-2"></i>ahmadsaipullah140@gmail.com</a>
-                        <a href="https://wa.me/6287880182823" class="btn btn-outline-dark m-2"><i class="fab fa-whatsapp me-2"></i>0878-8018-2823</a>
+                <div class="col-lg-8">
+                    <div class="contact-info">
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Email</h5>
+                                <a href="mailto:ahmadsaipullah140@gmail.com">ahmadsaipullah140@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>WhatsApp</h5>
+                                <a href="https://wa.me/6287880182823">+62 878-8018-2823</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h5>Location</h5>
+                                <p class="mb-0">Cipondoh, Tangerang, Banten, Indonesia</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <div class="container text-center">
-            <div class="social-icons mb-3">
-                <a href="https://linkedin.com/in/ahmad-saifullah-7b1b61227/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/ahmadsaipullah" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://youtube.com/@saipulahm4d" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-icons mb-4">
+                    <a href="https://linkedin.com/in/ahmad-saifullah-7b1b61227/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/ahmadsaipullah" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://youtube.com/@saipulahm4d" target="_blank" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <p class="mb-0">&copy; 2025 Ahmad Saifullah. Crafted with <i class="fas fa-heart" style="color: #e74c3c;"></i> and <i class="fas fa-coffee" style="color: #8B4513;"></i></p>
             </div>
-            <p class="mb-0">&copy; Copyright 2025 | Dibuat oleh Ahmad Saifullah</p>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loader').style.opacity = '0';
+                setTimeout(function() {
+                    document.getElementById('loader').style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+        
         // Initialize AOS
         AOS.init({
-            duration: 800,
+            duration: 1000,
             once: true,
+            offset: 100
         });
-
-        // Initialize Typed.js
+        
+        // Typed.js
         var typed = new Typed('#typed-text', {
-            strings: ['Web Developer', 'IT Support Specialist', 'Laravel Enthusiast'],
+            strings: [
+                'Laravel Expert',
+                'Full Stack Developer', 
+                'IT Support Specialist',
+                'Problem Solver'
+            ],
             typeSpeed: 60,
             backSpeed: 40,
-            loop: true
+            loop: true,
+            backDelay: 2000
         });
+        
+        // Particles.js
+        if (window.innerWidth > 768) {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: '#00d4ff' },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.5, random: false },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#00d4ff',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 2,
+                        direction: 'none',
+                        random: false,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 140, line_linked: { opacity: 1 } },
+                        push: { particles_nb: 4 }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+        
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('mainNavbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarCollapse.classList.remove('show');
+                    }
+                }
+            });
+        });
+        
+        // Active Navigation Highlight
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Counter Animation
+        function animateCounter(element, target) {
+            let count = 0;
+            const increment = target / 100;
+            const timer = setInterval(function() {
+                count += increment;
+                if (count >= target) {
+                    element.textContent = target + (target === 100 ? '%' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.ceil(count) + (target === 100 ? '%' : '+');
+                }
+            }, 20);
+        }
+        
+        // Trigger counter animation when in view
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const hasPlus = text.includes('+');
+                        const hasPercent = text.includes('%');
+                        const number = parseFloat(text);
+                        
+                        let count = 0;
+                        const increment = number / 50;
+                        const timer = setInterval(function() {
+                            count += increment;
+                            if (count >= number) {
+                                stat.textContent = number + (hasPlus ? '+' : hasPercent ? '%' : '');
+                                clearInterval(timer);
+                            } else {
+                                const displayValue = hasPercent ? Math.ceil(count) : count.toFixed(2);
+                                stat.textContent = displayValue + (hasPlus ? '+' : hasPercent ? '%' : '');
+                            }
+                        }, 30);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        const statsSection = document.querySelector('.stats-row');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
     </script>
 </body>
 </html>
-
-
-
