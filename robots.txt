@@ -1,0 +1,20 @@
+# robots.txt for Ahmad Saifullah Portfolio
+# https://ahmadsaipullah.github.io/ipul-portpolio.github.io/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ahmadsaipullah.github.io/ipul-portpolio.github.io/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+
+# Bing specific
+User-agent: Bingbot
+Allow: /
+
+# Allow all crawlers to index images
+User-agent: Googlebot-Image
+Allow: /img/
